@@ -11,6 +11,7 @@ import Eventslider from "./components/Eventslider";
 import TeamsPills from "./components/TeamsPills";
 import Register from "./Pages/Register";
 import Loader from "./components/Loader";
+import NotFound from "./components/NotFound";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -66,6 +67,10 @@ const App = () => {
             <Route
               path="/register"
               element={<Register />}
+            />
+            <Route
+              path="*"
+              element={<NotFound />}
             />
           </Routes>
         </div>
