@@ -34,7 +34,7 @@ export const navLinks = [
 const Navbar = () => {
   const [active, setActive] = useState("HOME");
   const [toggle, setToggle] = useState(false);
-  const [scrolling , setScrolling ] = useState(false)
+  const [scrolling, setScrolling] = useState(false);
 
   // Function to toggle the sidebar
   const toggleSidebar = () => {
@@ -52,26 +52,29 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
-
   return (
     <>
-      <div className= {`z-50 w-[100%] text-content overflow-hidden fixed ${scrolling ? '' : ''}`}>
+      <div
+        className={`z-50 w-[100%] text-content overflow-hidden fixed ${
+          scrolling ? "" : ""
+        }`}
+      >
         <div className={`sm:px-8 px-2 flex justify-around items-center`}>
           <div className={`xl:max-w-[1280px] w-11/12`}>
             <nav className="w-full flex py-6 justify-between items-center navbar">
               {/* Logo */}
               <Link to={"/"}>
-              <img
-                className="h-[3.8rem] sm:h-[4rem] md:h-[5rem] md: lg:h-20"
-                src={ecell_logo}
-                alt="ECELL TEC"
-              />
+                <img
+                  className="h-[3.8rem] sm:h-[4rem] md:h-[5rem] md: lg:h-20"
+                  src={ecell_logo}
+                  alt="ECELL TEC"
+                />
               </Link>
 
               {/* Desktop Navigation */}
@@ -88,7 +91,6 @@ const Navbar = () => {
                   </li>
                 ))}
               </ul>
-
 
               {/* Mobile Navigation */}
               <div className="md:hidden flex flex-1 justify-end items-center">
@@ -108,7 +110,7 @@ const Navbar = () => {
       <div
         className={`${
           toggle ? "translate-x-0" : "translate-x-full"
-        } fixed flex justify-center items-center w-[100%] h-full custom-gradient-1 shadow-[inset_black_50px_50px_800px] transition-transform transform duration-300 ease-in-out z-40`}
+        } fixed flex justify-center items-center w-[100%] h-full bg-zinc-800 shadow-[inset_black_50px_50px_800px] transition-transform transform duration-300 ease-in-out z-40`}
       >
         <ul className="list-none flex flex-col pt-6 gap-y-8">
           {navLinks.map((nav, index) => (

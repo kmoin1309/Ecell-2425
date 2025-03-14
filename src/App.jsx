@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import mainBg from "./assets/bg.mp4";
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./Pages/Home";
@@ -26,7 +27,24 @@ const App = () => {
       {loading ? (
         <Loader />
       ) : (
-        <>
+        <div className="app-container relative min-h-screen">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            id="mainBgVideo"
+            className="fixed top-0 left-0 w-screen h-screen object-cover -z-20"
+            style={{
+              objectFit: "cover",
+              objectPosition: "center",
+            }}
+          >
+            <source
+              src={mainBg}
+              type="video/mp4"
+            />
+          </video>
           <Navbar />
           <Routes>
             <Route
@@ -50,7 +68,7 @@ const App = () => {
               element={<Register />}
             />
           </Routes>
-        </>
+        </div>
       )}
     </>
   );

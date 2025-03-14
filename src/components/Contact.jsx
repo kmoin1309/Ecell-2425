@@ -29,10 +29,11 @@ const Contact = () => {
               {/* Contact through */}
               <div className="w-[80%] space-y-7">
                 <div className="flex">
-                  <div className="bg-zinc-800 w-14 flex justify-center items-center rounded-lg mx-2">
+                  <div className="bg-zinc-800 w-14 h-14 flex justify-center items-center rounded-lg mx-2 p-3">
                     <img
                       src="/location.png"
                       alt=""
+                      className="w-full h-full object-contain"
                     />
                   </div>
 
